@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- 모바일 화면 최적화 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>2027 일학습병행 안내자료 | 광운대학교 KW-IPP센터</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family:
+                "Noto Sans KR",
+                "Malgun Gothic",
+                Arial,
+                sans-serif;
+            background: linear-gradient(135deg, #eef4ff, #f8fbff);
+            color: #1f2937;
+        }
+
+        .container {
+            width: 92%;
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 50px 0 40px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .logo-text {
+            font-size: 16px;
+            font-weight: 700;
+            color: #1d4ed8;
+            margin-bottom: 12px;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 30px;
+            line-height: 1.4;
+            font-weight: 800;
+            color: #111827;
+        }
+
+        .subtitle {
+            margin-top: 12px;
+            color: #6b7280;
+            font-size: 15px;
+        }
+
+        .menu {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .menu-button {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            width: 100%;
+            min-height: 70px;
+            padding: 18px 24px;
+
+            border-radius: 14px;
+            border: 1px solid #dbe3f0;
+
+            background: #ffffff;
+            color: #111827;
+
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 700;
+
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+
+            transition:
+                transform 0.15s ease,
+                box-shadow 0.15s ease;
+        }
+
+        .menu-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.10);
+        }
+
+        .menu-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            width: 36px;
+            height: 36px;
+
+            margin-right: 15px;
+
+            border-radius: 50%;
+            background: #2563eb;
+            color: white;
+
+            font-size: 16px;
+            font-weight: 800;
+            flex-shrink: 0;
+        }
+
+        .menu-content {
+            display: flex;
+            align-items: center;
+            flex: 1;
+        }
+
+        .arrow {
+            color: #2563eb;
+            font-size: 24px;
+            font-weight: 400;
+        }
+
+        .footer {
+            margin-top: 40px;
+            padding-top: 25px;
+
+            text-align: center;
+
+            border-top: 1px solid #dbe3f0;
+
+            color: #6b7280;
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        .footer strong {
+            color: #374151;
+        }
+
+        /* PDF 미리보기 */
+        .viewer {
+            display: none;
+            margin-top: 30px;
+        }
+
+        .viewer-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            margin-bottom: 12px;
+        }
+
+        .viewer-title {
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        .close-button {
+            border: none;
+            background: #e5e7eb;
+            color: #374151;
+
+            padding: 8px 14px;
+            border-radius: 8px;
+
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        iframe {
+            width: 100%;
+            height: 75vh;
+            min-height: 500px;
+
+            border: 1px solid #d1d5db;
+            border-radius: 10px;
+            background: white;
+        }
+
+        /* 모바일 */
+        @media (max-width: 600px) {
+
+            .container {
+                width: 90%;
+                padding-top: 35px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            .subtitle {
+                font-size: 14px;
+            }
+
+            .menu-button {
+                min-height: 64px;
+                padding: 15px 18px;
+                font-size: 16px;
+            }
+
+            .menu-number {
+                width: 32px;
+                height: 32px;
+                margin-right: 12px;
+                font-size: 14px;
+            }
+
+            iframe {
+                height: 65vh;
+                min-height: 400px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- 제목 -->
+    <header class="header">
+
+        <div class="logo-text">
+            광운대학교 KW-IPP센터
+        </div>
+
+        <h1>
+            2027 일학습병행 안내자료
+        </h1>
+
+        <div class="subtitle">
+            광운대학교 일학습병행 특화대학 안내
+        </div>
+
+    </header>
+
+
+    <!-- 메뉴 -->
+    <main class="menu">
+
+        <!-- 1. PDF 바로 보기 -->
+        <a
+            href="2027-전체설명회-20261001-v1"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="menu-button"
+        >
+
+            <div class="menu-content">
+
+                <span class="menu-number">
+                    1
+                </span>
+
+                <span>
+                    PDF 바로 보기
+                </span>
+
+            </div>
+
+            <span class="arrow">
+                ›
+            </span>
+
+        </a>
+
+
+        <!-- 2. PDF 다운로드 -->
+        <a
+            href="2027-전체설명회-20261001-v1"
+            download="2027-전체설명회-20261001-v1"
+            class="menu-button"
+        >
+
+            <div class="menu-content">
+
+                <span class="menu-number">
+                    2
+                </span>
+
+                <span>
+                    PDF 다운로드
+                </span>
+
+            </div>
+
+            <span class="arrow">
+                ↓
+            </span>
+
+        </a>
+
+
+        <!-- 3. 기타 자료 -->
+        <a
+            href="./"
+            class="menu-button"
+        >
+
+            <div class="menu-content">
+
+                <span class="menu-number">
+                    3
+                </span>
+
+                <span>
+                    기타 자료
+                </span>
+
+            </div>
+
+            <span class="arrow">
+                ›
+            </span>
+
+        </a>
+
+    </main>
+
+
+    <!-- 안내 -->
+    <footer class="footer">
+
+        <strong>광운대학교 KW-IPP센터</strong>
+        <br>
+
+        2027 일학습병행 특화대학 안내자료
+
+    </footer>
+
+</div>
+
+</body>
+</html>
