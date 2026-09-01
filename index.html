@@ -1,9 +1,9 @@
+HTML
 <!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
 
-    <!-- 모바일 화면 최적화 -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>2027 일학습병행 안내자료 | 광운대학교 KW-IPP센터</title>
@@ -88,6 +88,7 @@
             transition:
                 transform 0.15s ease,
                 box-shadow 0.15s ease;
+            cursor: pointer;
         }
 
         .menu-button:hover {
@@ -139,86 +140,6 @@
             line-height: 1.7;
         }
 
-        .footer strong {
-            color: #374151;
-        }
-
-        /* PDF 미리보기 */
-        .viewer {
-            display: none;
-            margin-top: 30px;
-        }
-
-        .viewer-header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-
-            margin-bottom: 12px;
-        }
-
-        .viewer-title {
-            font-size: 18px;
-            font-weight: 700;
-        }
-
-        .close-button {
-            border: none;
-            background: #e5e7eb;
-            color: #374151;
-
-            padding: 8px 14px;
-            border-radius: 8px;
-
-            cursor: pointer;
-            font-size: 14px;
-        }
-
-        iframe {
-            width: 100%;
-            height: 75vh;
-            min-height: 500px;
-
-            border: 1px solid #d1d5db;
-            border-radius: 10px;
-            background: white;
-        }
-
-        /* 모바일 */
-        @media (max-width: 600px) {
-
-            .container {
-                width: 90%;
-                padding-top: 35px;
-            }
-
-            h1 {
-                font-size: 24px;
-            }
-
-            .subtitle {
-                font-size: 14px;
-            }
-
-            .menu-button {
-                min-height: 64px;
-                padding: 15px 18px;
-                font-size: 16px;
-            }
-
-            .menu-number {
-                width: 32px;
-                height: 32px;
-                margin-right: 12px;
-                font-size: 14px;
-            }
-
-            iframe {
-                height: 65vh;
-                min-height: 400px;
-            }
-        }
-
         /* PDF 바로 보기 영역 */
         .viewer {
             display: none;
@@ -247,10 +168,18 @@
             border: none;
             background: #e5e7eb;
             color: #374151;
+
             padding: 8px 14px;
             border-radius: 8px;
+
             cursor: pointer;
             font-size: 14px;
+            font-weight: 600;
+            transition: background 0.2s ease;
+        }
+
+        .close-button:hover {
+            background: #d1d5db;
         }
 
         #pdfFrame {
@@ -263,6 +192,39 @@
             background: #f8fafc;
         }
 
+        /* 모바일 대응 반응형 */
+        @media (max-width: 600px) {
+            .container {
+                width: 90%;
+                padding-top: 35px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            .subtitle {
+                font-size: 14px;
+            }
+
+            .menu-button {
+                min-height: 64px;
+                padding: 15px 18px;
+                font-size: 16px;
+            }
+
+            .menu-number {
+                width: 32px;
+                height: 32px;
+                margin-right: 12px;
+                font-size: 14px;
+            }
+
+            #pdfFrame {
+                height: 65vh;
+                min-height: 400px;
+            }
+        }
     </style>
 </head>
 
@@ -270,123 +232,84 @@
 
 <div class="container">
 
-    <!-- 제목 -->
     <header class="header">
-
-        <h1>
-            2027 일학습병행 안내자료
-        </h1>
-
-        <div class="logo-text">
-            광운대학교 KW-IPP센터
-        </div>
-
+        <h1>2027 일학습병행 안내자료</h1>
+        <div class="logo-text">광운대학교 KW-IPP센터</div>
     </header>
 
-
-    <!-- 메뉴 -->
     <main class="menu">
 
-        <!-- 1. PDF 바로 보기 -->
         <a href="#" id="viewPdfButton" class="menu-button">
-
             <div class="menu-content">
                 <span class="menu-number">1</span>
                 <span>PDF 바로 보기</span>
             </div>
-
             <span class="arrow">›</span>
-
         </a>
 
-        <!-- 2. PDF 다운로드 -->
         <a
             href="2027-전체설명회-20261001-v1.pdf"
-            download="2027-일학습병행-안내자료.pdf"
+            download="2027-전체설명회-20261001-v1.pdf"
             class="menu-button"
         >
-
             <div class="menu-content">
                 <span class="menu-number">2</span>
                 <span>PDF 다운로드</span>
             </div>
-
             <span class="arrow">↓</span>
-
         </a>
 
-        <!-- 3. 기타 자료 -->
-        <a href="./" class="menu-button">
-
+        <a href="#" id="otherDocsButton" class="menu-button">
             <div class="menu-content">
                 <span class="menu-number">3</span>
                 <span>기타 자료</span>
             </div>
-
             <span class="arrow">›</span>
-
         </a>
 
     </main>
 
-    <!-- PDF 바로 보기 영역 -->
     <section id="pdfViewer" class="viewer">
-
         <div class="viewer-header">
             <div class="viewer-title">2027 일학습병행 안내자료</div>
-
-            <button
-                type="button"
-                id="closeViewer"
-                class="close-button"
-            >
-                닫기
-            </button>
+            <button type="button" id="closeViewer" class="close-button">닫기</button>
         </div>
 
-        <!--
-            휴대폰에서 PDF를 직접 여는 대신 Google PDF Viewer를 사용합니다.
-            이 방식은 모바일 브라우저가 PDF를 자동 다운로드하는 문제를 줄여줍니다.
-        -->
         <iframe
             id="pdfFrame"
             title="2027 일학습병행 안내자료 PDF"
             allow="fullscreen"
             loading="lazy">
         </iframe>
-
     </section>
 
-    <!-- 안내 -->
     <footer class="footer">
-
-        <br>
-
         2027 일학습병행 특화대학 안내자료
-
     </footer>
 
 </div>
 
-
 <script>
-    // GitHub Pages에 공개된 실제 PDF 주소
-    const pdfUrl =
-        "https://namkim3046-debug.github.io/KW-IPP-GUIDE/2027-전체설명회-20261001-v1.pdf";
+    // GitHub 파일명 정의
+    const pdfFileName = "2027-전체설명회-20261001-v1.pdf";
+
+    // 현재 접속 페이지(도메인/경로) 기준 절대 URL 자동 생성 (구글 뷰어 연동용)
+    const pdfAbsoluteUrl = new URL(pdfFileName, window.location.href).href;
 
     const viewPdfButton = document.getElementById("viewPdfButton");
+    const otherDocsButton = document.getElementById("otherDocsButton");
     const pdfViewer = document.getElementById("pdfViewer");
     const pdfFrame = document.getElementById("pdfFrame");
     const closeViewer = document.getElementById("closeViewer");
 
-    // 모바일 브라우저의 PDF 자동 다운로드 문제를 피하기 위해
-    // Google의 PDF Viewer를 페이지 안에서 불러옵니다.
+    // 1. PDF 바로 보기 버튼 클릭 시 (Google Document Viewer 연동)
     viewPdfButton.addEventListener("click", function (event) {
         event.preventDefault();
 
+        // Google Docs Viewer를 활용한 미리보기 URL 구성
         const viewerUrl =
-            "https://docs.google.com/gview?embedded=1&url=" +
-            encodeURIComponent(pdfUrl);
+            "https://docs.google.com/gview?embedded=true&url=" +
+            encodeURIComponent(pdfAbsoluteUrl);
 
         pdfFrame.src = viewerUrl;
         pdfViewer.style.display = "block";
@@ -399,6 +322,7 @@
         }, 100);
     });
 
+    // 닫기 버튼 클릭 시
     closeViewer.addEventListener("click", function () {
         pdfFrame.src = "";
         pdfViewer.style.display = "none";
@@ -407,6 +331,12 @@
             top: 0,
             behavior: "smooth"
         });
+    });
+
+    // 3. 기타 자료 버튼 클릭 시 (미구현 상태 안내)
+    otherDocsButton.addEventListener("click", function (event) {
+        event.preventDefault();
+        alert("현재 준비 중인 메뉴입니다.");
     });
 </script>
 
